@@ -1,0 +1,11 @@
+VisualBoyAdvance : Emulator for Game Boy Advance
+
+  VBA development team.
+
+PSPGBA : Porting on PSP
+
+  PSP298 author of the First ported version of VBA on PSP
+
+PSPVBA : Porting on PSP 
+
+  Ludovic Jacomme (zx81.zx81@gmail.com)

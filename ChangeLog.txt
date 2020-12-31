@@ -1,0 +1,113 @@
+1.2.4
+
+- Improve the code of the graphic stuff (up to 3% faster)
+- Improve the code of the ARM emulator (faster)
+- Add BIOS file support (see the README)
+- Add option to adjust the sound quality
+- Add option to delete files (in the file selector)
+- Bug fix in the save settings code
+- Merge the code for 1.5FW and 2.xFW
+
+1.2.3
+
+- Rewrite partially the code of the graphic stuff
+  (many parts of the code weren't optimized at all !)
+- Rewrite partially the code of the ARM emulator
+- Review memory cache strategy
+- Bug fix and code cleaning
+
+1.2.2
+
+- Rewrite some part of the Gfx code (up to 5% faster)
+- Bug fix and code cleaning
+
+1.2.1
+
+- New feature to save and load a distinct setting file for each games
+- Add option to enable/disable the cache with the Graphical Unit 
+- Emulator menus reorganisation (new menu for settings)
+
+- Bug fix: Emulator menu is now launched on startup
+- Bug fix: no more freeze when exiting the emulator 
+  (but HOME button still doesn't work !) 
+- Bug fix: bad refresh of the emulator menu/screen
+
+1.2.0
+
+- Port sound code to Media engine (faster !)
+- GU access improvement (disable cache)
+- Add option to enable/disable GBA battery/flash save 
+- Add new beautiful icons and background designed by Win-Win (Shadow) !
+
+1.1.0
+
+- Sound improvement (22Khz instead of 11Khz)
+- SDL has been replaced by direct GU access
+- Graphical render is now faster and smoother
+
+1.0.7
+
+- Sound improvement
+- Switch off the sound during screenshot save
+- The percent of battery left is now displayed in the emulator window
+- Add a watchdog to automatically return to the emulator menu
+  when  the battery is very low (< 5%)
+- Add beautiful icons and background designed by Shadow !
+- Modify the UI to be able to use custom background images (transparency)
+- Sleep mode is now working (but only when you're in the emulator window)
+
+1.0.6
+
+- Add a screen resize option (Ymin/Ymax) to
+  reduce the size of the screen and then speed up the emulation.
+- Press Start+Select to return to the emulator menu (
+  (whatever the key mapping you have set)
+- (re) Add the save battery feature 
+  (already available in the original VBA source code)
+
+1.0.5
+
+- New turbo modes (more speed and less graphic artefacts)
+- Add SFX enable/disable option (can be used to increase speed)
+- Fix in BMP screenshots (no more need to flip the image)
+- Improve a bit the sound quality
+- The SELECT key is now available for user keyboard mapping 
+  (but don't forget to map a psp KEY to enter in the emulator MENU !)
+- File requester use now two directories for keyboard and rom files
+- Fix the bug that made games like Pokemon Fire to crash 
+
+1.0.4
+
+- Emulator menu is now directly available on startup
+- Add ARM tick average change option (can be used to increase speed)
+- Add turbo modes, but it can result in graphic artefacts 
+  (turbo modes don't work for all games)
+- The file default.kbd (keyboard mapping) is now loaded on startup
+- Screenshots are now save in BMP format instead of PNG 
+  (less memory consumming, so it should not freeze your PSP).
+- Many bug fix
+
+1.0.3
+
+- Always better speed !
+- Add new render modes (scanline)
+- Add FPS/CPU statistics
+- The Start key is now usable
+- Sound off increase speed
+- Many bug fix 
+- Big Code cleaning
+
+1.0.2
+
+- Major speed improvements !!!
+- Better Sound quality (rewritten)
+
+- Add new render modes (smooth)
+- Zip file support
+- PNG screenshots (instead of BMP)
+- Many bug fix 
+- Code cleaning
+
+1.0.1
+
+- Intial release
