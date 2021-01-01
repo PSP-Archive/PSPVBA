@@ -9,7 +9,6 @@
  * Adapted from original gzio.c from zlib library by Forgotten
  */
 #include <zlib.h>
-#include <zutil.h>
 
 gzFile ZEXPORT memgzopen(char *memory, int, const char *);
 int ZEXPORT memgzread(gzFile, voidp, unsigned);

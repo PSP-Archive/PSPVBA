@@ -67,14 +67,17 @@ CXXFLAGS = $(DEFINES) $(MORE_CFLAGS) -fno-exceptions -fno-rtti
 
 
 LIBS += -LUnzipLib -L/usr/local/pspdev/psp/lib -L/usr/local/pspdev/psp/sdk/lib \
--lSDL_image -lpspaudiolib -lSDL -ljpeg \
--lpng -lz -lpspdebug -lpspgu -lpspctrl -lpspge -lpspaudio -lpspdisplay -lpsphprm \
--lpspsdk -lpsprtc -lc -lpspuser -lpsputility -lpspnet_inet -lpspkernel -lpsppower -lm 
+-lSDL_image -lSDL -lpng -ljpeg -lGL -lGLU -lm -lc -lz \
+-lpspaudiolib -lpspdebug -lpspgu -lpspctrl -lpspge -lpspaudio -lpspdisplay -lpsphprm \
+-lpspsdk -lpspuser -lpsputility -lpspnet_inet -lpsppower \
+-lpspvfpu -lpsprtc -lpspirkeyb -lpsppower
 
 EXTRA_TARGETS = EBOOT.PBP
 PSP_EBOOT_TITLE = PSPVBA
 PSP_EBOOT_ICON= pspvba.png
 PSP_EBOOT_PIC1 = pspvba-pic.png
+PSP_FW_VERSION = 550
+BUILD_PRX = 1
 
 include $(PSPSDK)/lib/build.mak
 

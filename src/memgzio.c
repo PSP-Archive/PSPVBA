@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
-
+#include <errno.h>
 #include "memgzio.h"
 
 /*struct internal_state {int dummy;};*/ /* for buggy compilers */
@@ -261,7 +261,7 @@ local gzFile gz_open (memory, available, mode)
         err = Z_STREAM_ERROR;
 #else
         err = deflateInit2(&(s->stream), level,
-                           Z_DEFLATED, -MAX_WBITS, DEF_MEM_LEVEL, strategy);
+                           Z_DEFLATED, -MAX_WBITS, MAX_MEM_LEVEL, strategy);
         /* windowBits is passed < 0 to suppress zlib header */
 
         s->stream.next_out = s->outbuf = (Byte*)ALLOC(Z_BUFSIZE);
@@ -296,7 +296,7 @@ local gzFile gz_open (memory, available, mode)
         /* Write a very simple .gz header:
          */
         memPrintf(s->file, "%c%c%c%c%c%c%c%c%c%c", gz_magic[0], gz_magic[1],
-             Z_DEFLATED, 0 /*flags*/, 0,0,0,0 /*time*/, 0 /*xflags*/, OS_CODE);
+             Z_DEFLATED, 0 /*flags*/, 0,0,0,0 /*time*/, 0 /*xflags*/, 0);
 	s->startpos = 10L;
 	/* We use 10L instead of ftell(s->file) to because ftell causes an
          * fflush on some systems. This version of the library doesn't use
@@ -470,7 +470,7 @@ int ZEXPORT memgzread (file, buf, len)
 	    uInt n = s->stream.avail_in;
 	    if (n > s->stream.avail_out) n = s->stream.avail_out;
 	    if (n > 0) {
-		zmemcpy(s->stream.next_out, s->stream.next_in, n);
+		memcpy(s->stream.next_out, s->stream.next_in, n);
 		next_out += n;
 		s->stream.next_out = next_out;
 		s->stream.next_in   += n;
